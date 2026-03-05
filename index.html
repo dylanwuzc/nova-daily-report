@@ -1,201 +1,172 @@
 ---
 layout: default
-title: "AI & Crypto 日报"
+class: home
+comments: false
 ---
 
-<div class="home">
-  <header class="hero">
-    <h1>🚀 AI & Crypto 日报</h1>
-    <p class="tagline">每日精选 AI 智能体、量化交易、模型发展、加密交易机器人领域的最新动态</p>
-    <p class="meta">
-      由 Nova Research 自动生成 | 每日凌晨 3 点更新
-    </p>
-  </header>
-  
-  <section class="latest-posts">
-    <h2>📅 最新日报</h2>
-    
-    {% assign posts = site.posts | sort: 'date' | reverse %}
-    {% if posts.size > 0 %}
-      <ul class="post-list">
-        {% for post in posts limit:7 %}
-          <li>
-            <span class="post-date">{{ post.date | date: "%m月%d日" }}</span>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title }}
-            </a>
-            <span class="post-categories">
-              {% for cat in post.categories limit:3 %}
-                <span class="cat-tag">{{ cat }}</span>
-              {% endfor %}
-            </span>
-          </li>
-        {% endfor %}
-      </ul>
-      
-      <p class="more">
-        <a href="{{ '/archive' | relative_url }}">查看全部历史归档 →</a>
-      </p>
-    {% else %}
-      <p class="empty">暂无日报，敬请期待...</p>
-    {% endif %}
-  </section>
-  
-  <section class="categories">
-    <h2>🏷️ 按主题浏览</h2>
-    
-    <div class="category-grid">
-      <a href="{{ '/categories/ai-agents' | relative_url }}" class="category-card">
-        <span class="icon">🤖</span>
-        <span class="name">AI 智能体</span>
-      </a>
-      
-      <a href="{{ '/categories/quant-trading' | relative_url }}" class="category-card">
-        <span class="icon">📈</span>
-        <span class="name">量化交易</span>
-      </a>
-      
-      <a href="{{ '/categories/model-dev' | relative_url }}" class="category-card">
-        <span class="icon">🧠</span>
-        <span class="name">模型发展</span>
-      </a>
-      
-      <a href="{{ '/categories/crypto-bots' | relative_url }}" class="category-card">
-        <span class="icon">💰</span>
-        <span class="name">加密机器人</span>
-      </a>
-    </div>
-  </section>
-</div>
-
 <style>
-.hero {
-  text-align: center;
-  padding: 3rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+.home .banner,
+.home .site-header,
+.home .banner .collection-head,
+.home .banner .collection-head a,
+.home .site-header h1 a,
+.home .site-header .site-header-nav-item:hover {
+    color: #fff;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin: 0 0 1rem 0;
+.home .site-header .site-header-nav-item {
+    color: rgba(255, 255, 255, .7);
 }
 
-.hero .tagline {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin: 0 0 0.5rem 0;
+.home .banner,
+.home .site-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.hero .meta {
-  font-size: 0.9rem;
-  opacity: 0.7;
+.home .banner .collection-head {
+    background: 0 0;
+    box-shadow: none;
+    -webkit-box-shadow: none
 }
 
-.latest-posts {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
+.home .site-header {
+    border-bottom: none
 }
 
-.post-list {
-  list-style: none;
-  padding: 0;
-}
-
-.post-list li {
-  display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.post-date {
-  color: #64748b;
-  font-size: 0.9rem;
-  min-width: 80px;
-}
-
-.post-link {
-  flex: 1;
-  font-size: 1.1rem;
-  margin: 0 1rem;
-}
-
-.post-categories {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.cat-tag {
-  background: #e0e7ff;
-  color: #2563eb;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-}
-
-.more {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.categories {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.category-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  background: #f8fafc;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.category-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  text-decoration: none;
-}
-
-.category-card .icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.category-card .name {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.8rem;
+@media (max-width:50em) {
+  .home .collapsed .icon-bar {
+    background-color: white;
   }
-  
-  .post-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .post-link {
-    margin: 0;
+
+  .home .collection-head .collection-header {
+    font-size: 1.25em;
   }
 }
+
+.daily-highlight {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.daily-highlight h3 {
+    color: #667eea;
+    margin-top: 0;
+}
+
+.topic-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.topic-ai { background: #e3f2fd; color: #1976d2; }
+.topic-quant { background: #f3e5f5; color: #7b1fa2; }
+.topic-model { background: #e8f5e9; color: #388e3c; }
+.topic-crypto { background: #fff3e0; color: #f57c00; }
 </style>
+
+<section class="banner">
+    <div class="collection-head">
+      <div class="container">
+        <div class="columns">
+          <div class="column two-thirds">
+            <div class="collection-title">
+              <h1 class="collection-header" id="sub-title"><span>{{ site.subtitle }}</span></h1>
+              <div class="collection-info">
+                <span class="meta-info">
+                  <span class="octicon octicon-clock"></span>
+                  每日凌晨 3 点更新
+                </span>
+                <span class="meta-info">
+                  <span class="octicon octicon-mark-github"></span>
+                  <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="column one-third mobile-hidden">
+            <div class="collection-title">
+              <!-- 右侧可以放置统计信息 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- /.banner -->
+
+<section class="container content">
+    <div class="columns">
+        <div class="column two-thirds">
+            <div class="home-layout">
+                <h2 style="border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-bottom: 20px;">📅 最新日报</h2>
+                
+                {% assign posts = site.posts | sort: 'date' | reverse %}
+                {% if posts.size > 0 %}
+                    {% for post in posts limit:10 %}
+                    <article class="home-post">
+                        <h3>
+                            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="post-meta">
+                            <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y-%m-%d" }}
+                            {% if post.categories %}
+                                {% for cat in post.categories %}
+                                <span class="topic-tag topic-{{ cat }}">{{ cat }}</span>
+                                {% endfor %}
+                            {% endif %}
+                        </p>
+                        <div class="post-excerpt">
+                            {{ post.excerpt | strip_html | truncate: 200 }}
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="daily-highlight">
+                        <p>暂无日报，敬请期待...</p>
+                    </div>
+                {% endif %}
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="/archives/" class="btn">查看全部历史归档</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column one-third">
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <h3 style="margin-top: 0; color: #667eea;">🏷️ 主题分类</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 10px 0;">
+                        <span class="topic-tag topic-ai">AI</span>
+                        <a href="/categories/#ai智能体">AI 智能体</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <span class="topic-tag topic-quant">Quant</span>
+                        <a href="/categories/#量化交易">量化交易</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <span class="topic-tag topic-model">Model</span>
+                        <a href="/categories/#模型发展">模型发展</a>
+                    </li>
+                    <li style="margin: 10px 0;">
+                        <span class="topic-tag topic-crypto">Crypto</span>
+                        <a href="/categories/#加密交易">加密交易机器人</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #667eea;">📊 数据统计</h3>
+                <p>已发布日报: <strong>{{ site.posts.size }}</strong> 期</p>
+                <p>数据提供: <a href="https://twitterapi.io" target="_blank">TwitterAPI.io</a></p>
+                <p>自动更新: <span style="color: #28a745;">●</span> 运行中</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /section.content -->

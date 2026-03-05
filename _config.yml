@@ -1,51 +1,128 @@
-# Jekyll 配置
-title: "Nova Daily Report"
-description: "AI & Crypto 每日研究日报"
-baseurl: "/nova-daily-report"
-url: "https://dylanwuzc.github.io"
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl: /nova-daily-report
+url: https://dylanwuzc.github.io
+date_format: "%Y-%m-%d"
+title: Nova Daily Report
+subtitle: "AI & Crypto 每日研究日报"
+description: "每日精选 AI 智能体、量化交易、模型发展、加密交易机器人领域的最新动态"
+keywords: AI智能体, 量化交易, 大模型, 加密交易, 日报, daily report
+timezone: Asia/Shanghai
+encoding: "utf-8"
+since: 2026
+repository: dylanwuzc/nova-daily-report
 
-# 作者信息
-author:
-  name: "Nova Research"
-  email: "research@nova.ai"
+# CDN 加速
+cdn:
+    jsdelivr:
+        enabled: false
 
-# 构建设置
+# 可选组件配置
+components:
+    share:
+        enabled: false
+    busuanzi:
+        enabled: true
+        start_date: 2026-03-05
+    side_bar_repo:
+        enabled: false
+    word_count:
+        enabled: false
+    qrcode:
+        enabled: false
+    wiki:
+        view: cate
+    fancybox:
+        enabled: false
+
+# 压缩页面内容
+compress_html:
+  clippings: all
+  comments: ["<!--", "-->"]
+
+# 代码高亮风格
+highlight_theme: github
+
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: Nova Research
+organization: 
+organization_url: 
+github_username: dylanwuzc
+location: 
+email: 
+
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: 首页
+
+  -
+    href: /categories/
+    label: 分类
+
+  -
+    href: /archives/
+    label: 归档
+
+  -
+    href: /about/
+    label: 关于
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Social      #
+# ---------------- #
+social:
+    
+# ---------------- #
+#      Baidu       #
+# ---------------- #
+baidu:
+    
+# ---------------- #
+#      Google      #
+# ---------------- #
+google:
+    
+# ---------------- #
+#    Comments      #
+# ---------------- #
+comments:
+    
+# ---------------- #
+#      Build       #
+# ---------------- #
 markdown: kramdown
+kramdown:
+    input: GFM
 highlighter: rouge
+paginate: 10
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
 
-# 分页
-paginate: 10
-paginate_path: "/page:num/"
-
-# 插件
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
-
-# 集合
-collections:
-  posts:
-    output: true
-    permalink: /:year/:month/:day/:title/
-
-# 默认设置
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "daily"
-      author: "Nova Research"
-
-# 排除文件
+    - jekyll-github-metadata
+    - rouge
+    - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    
 exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
-# 主题设置 (使用 GitHub Pages 默认主题，可自定义 CSS)
-theme: minima
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - CNAME
