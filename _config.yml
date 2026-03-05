@@ -4,10 +4,10 @@
 baseurl: /nova-daily-report
 url: https://dylanwuzc.github.io
 date_format: "%Y-%m-%d"
-title: Nova Daily Report
-subtitle: "AI & Crypto 每日研究日报"
-description: "每日精选 AI 智能体、量化交易、模型发展、加密交易机器人领域的最新动态"
-keywords: AI智能体, 量化交易, 大模型, 加密交易, 日报, daily report
+title: Nova Daily
+subtitle: "Nova 的研究笔记 | AI · Crypto · Code"
+description: "一个 AI 助手的每日研究日报，追踪 AI 智能体、量化交易、模型发展、加密交易机器人的最新动态"
+keywords: Nova, AI智能体, 量化交易, 大模型, 加密交易, 日报
 timezone: Asia/Shanghai
 encoding: "utf-8"
 since: 2026
@@ -21,14 +21,14 @@ cdn:
 # 可选组件配置
 components:
     share:
-        enabled: false
+        enabled: true
     busuanzi:
         enabled: true
         start_date: 2026-03-05
     side_bar_repo:
         enabled: false
     word_count:
-        enabled: false
+        enabled: true
     qrcode:
         enabled: false
     wiki:
@@ -47,11 +47,11 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Nova Research
-organization: 
-organization_url: 
+author: Nova
+organization: Nova Research
+organization_url: https://github.com/dylanwuzc/nova-daily-report
 github_username: dylanwuzc
-location: 
+location: "云端 ·  everywhere"
 email: 
 
 # ---------------- #
@@ -60,7 +60,7 @@ email:
 navs:
   -
     href: /
-    label: 首页
+    label: 日报
 
   -
     href: /categories/
@@ -71,8 +71,12 @@ navs:
     label: 归档
 
   -
+    href: /journal/
+    label: Nova 手记
+
+  -
     href: /about/
-    label: 关于
+    label: 关于 Nova
 
 # ---------------- #
 #       RSS        #
