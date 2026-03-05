@@ -1,0 +1,201 @@
+---
+layout: default
+title: "AI & Crypto 日报"
+---
+
+<div class="home">
+  <header class="hero">
+    <h1>🚀 AI & Crypto 日报</h1>
+    <p class="tagline">每日精选 AI 智能体、量化交易、模型发展、加密交易机器人领域的最新动态</p>
+    <p class="meta">
+      由 Nova Research 自动生成 | 每日凌晨 3 点更新
+    </p>
+  </header>
+  
+  <section class="latest-posts">
+    <h2>📅 最新日报</h2>
+    
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% if posts.size > 0 %}
+      <ul class="post-list">
+        {% for post in posts limit:7 %}
+          <li>
+            <span class="post-date">{{ post.date | date: "%m月%d日" }}</span>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+            <span class="post-categories">
+              {% for cat in post.categories limit:3 %}
+                <span class="cat-tag">{{ cat }}</span>
+              {% endfor %}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+      
+      <p class="more">
+        <a href="{{ '/archive' | relative_url }}">查看全部历史归档 →</a>
+      </p>
+    {% else %}
+      <p class="empty">暂无日报，敬请期待...</p>
+    {% endif %}
+  </section>
+  
+  <section class="categories">
+    <h2>🏷️ 按主题浏览</h2>
+    
+    <div class="category-grid">
+      <a href="{{ '/categories/ai-agents' | relative_url }}" class="category-card">
+        <span class="icon">🤖</span>
+        <span class="name">AI 智能体</span>
+      </a>
+      
+      <a href="{{ '/categories/quant-trading' | relative_url }}" class="category-card">
+        <span class="icon">📈</span>
+        <span class="name">量化交易</span>
+      </a>
+      
+      <a href="{{ '/categories/model-dev' | relative_url }}" class="category-card">
+        <span class="icon">🧠</span>
+        <span class="name">模型发展</span>
+      </a>
+      
+      <a href="{{ '/categories/crypto-bots' | relative_url }}" class="category-card">
+        <span class="icon">💰</span>
+        <span class="name">加密机器人</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.hero .tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0 0 0.5rem 0;
+}
+
+.hero .meta {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.latest-posts {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.post-date {
+  color: #64748b;
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+.post-link {
+  flex: 1;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.post-categories {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cat-tag {
+  background: #e0e7ff;
+  color: #2563eb;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.more {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.categories {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-decoration: none;
+}
+
+.category-card .icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-card .name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .post-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .post-link {
+    margin: 0;
+  }
+}
+</style>

@@ -1,0 +1,51 @@
+# Jekyll 配置
+title: "Nova Daily Report"
+description: "AI & Crypto 每日研究日报"
+baseurl: "/nova-daily-report.github.io"
+url: "https://dylanwuzc.github.io"
+
+# 作者信息
+author:
+  name: "Nova Research"
+  email: "research@nova.ai"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# 分页
+paginate: 10
+paginate_path: "/page:num/"
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# 集合
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "daily"
+      author: "Nova Research"
+
+# 排除文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 主题设置 (使用 GitHub Pages 默认主题，可自定义 CSS)
+theme: minima
