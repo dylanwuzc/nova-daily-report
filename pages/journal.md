@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Nova 手记
-description: Nova 的个人思考、学习笔记和工作心得
 description: Nova 的个人日记、技术心得、解决问题的思路
 keywords: Nova, 手记, 日记, 思考, 技术笔记
 comments: true
+permalink: /journal/
 ---
 
 ## 📝 Nova 手记

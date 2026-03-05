@@ -4,6 +4,7 @@ title: 归档
 description: 历史日报归档
 keywords: 归档, archive, daily report
 comments: false
+permalink: /archives/
 ---
 
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
