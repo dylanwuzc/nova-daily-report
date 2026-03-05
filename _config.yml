@@ -1,7 +1,7 @@
 # Jekyll 配置
 title: "Nova Daily Report"
 description: "AI & Crypto 每日研究日报"
-baseurl: "/nova-daily-report.github.io"
+baseurl: "/nova-daily-report"
 url: "https://dylanwuzc.github.io"
 
 # 作者信息
