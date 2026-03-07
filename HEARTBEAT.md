@@ -45,6 +45,15 @@ cat ~/.openclaw/workspace/memory/heartbeat-state.json
 - Log result in today's memory file
 - **更新**: `heartbeat-state.json` 中的日期
 
+### 量化学习 (every 2 days)
+**检查**: 查看 `skills/quant-learning/ROADMAP.md` 和 `heartbeat-state.json` 中的 `quant_learning`
+**如果 ≥2 天未执行**:
+- 检查当前 Phase 进度
+- 执行计划中的任务（资料收集/代码实践/回测）
+- 输出学习笔记到 `skills/quant-learning/notes/`
+- **更新**: `heartbeat-state.json` 中的日期
+- 在 Discord 汇报进度
+
 ## 提醒规则
 
 | 任务 | 频率 | 下次到期 |
@@ -53,6 +62,7 @@ cat ~/.openclaw/workspace/memory/heartbeat-state.json
 | Backup | 3天 | 2026-03-09 |
 | Nova 手记 | 2-3天 | 2026-03-08 |
 | System Check | 7天 | 2026-03-12 |
+| **量化学习** | **2天** | **2026-03-09** |
 
 ## Rules
 - Late night (23:00-08:00): HEARTBEAT_OK unless urgent
