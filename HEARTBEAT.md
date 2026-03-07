@@ -45,14 +45,25 @@ cat ~/.openclaw/workspace/memory/heartbeat-state.json
 - Log result in today's memory file
 - **更新**: `heartbeat-state.json` 中的日期
 
-### 量化学习 (every 2 days)
-**检查**: 查看 `skills/quant-learning/ROADMAP.md` 和 `heartbeat-state.json` 中的 `quant_learning`
-**如果 ≥2 天未执行**:
-- 检查当前 Phase 进度
-- 执行计划中的任务（资料收集/代码实践/回测）
-- 输出学习笔记到 `skills/quant-learning/notes/`
-- **更新**: `heartbeat-state.json` 中的日期
-- 在 Discord 汇报进度
+### 量化学习 (every 2 days or when idle)
+**检查**: 查看 `skills/quant-learning/ROADMAP.md` 和 `memory/heartbeat-state.json`
+**触发条件**: 
+- Heartbeat 每 2 天检查一次
+- **或** 空闲时（无其他任务）主动迭代
+
+**执行内容**:
+1. 检查当前 Phase 进度
+2. 执行策略迭代（v0.x → v0.x+1）
+3. 记录回测结果到 `skills/quant-learning/notes/`
+4. 更新 MEMORY.md 项目进度
+5. 在 Discord 汇报关键里程碑
+
+**目标追踪**:
+- 目标胜率: 80%+
+- 当前最优: 65.25% (v0.2)
+- 差距: 14.75%
+
+**更新**: `heartbeat-state.json` 中的 `quant_learning` 日期
 
 ## 提醒规则
 
