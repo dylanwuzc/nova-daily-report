@@ -65,23 +65,30 @@ cat ~/.openclaw/workspace/memory/heartbeat-state.json
 
 **更新**: `heartbeat-state.json` 中的 `quant_learning` 日期
 
-### 量化策略 Heartbeat 监控 (新增)
+### 量化策略 Heartbeat 监控
+
 **触发**: 每次 Heartbeat 空闲时执行
 
-**执行内容**:
-1. **拉取最新K线** - 获取 BNB/SOL/ETH/LINK/AVAX 最新1小时数据
-2. **信号检查** - 运行策略判断是否有买入/卖出信号
-3. **状态记录** - 更新监控日志和状态文件
-4. **模拟盘跟踪** - 记录虚拟交易，统计胜率
+**动态验证流程**:
+1. **获取最新Top10** - 实时查询币安24h交易量排名
+2. **下载最新K线** - 获取最近7天1小时数据
+3. **策略回测验证** - 在最新数据上测试策略
+4. **结果记录** - 保存验证结果到 `results/dynamic-*.json`
 
-**命令**:
+**执行命令**:
 ```bash
-# 手动执行信号检查
-python3 ~/.openclaw/workspace/skills/quant-learning/scripts/signal_check.py
-
-# 查看最新信号
-cat /tmp/latest_signals.json
+bash ~/.openclaw/workspace/skills/quant-learning/scripts/dynamic_validator.sh
 ```
+
+**结果解读**:
+- 平均胜率 ≥80%: ✅ 策略在当前市场有效
+- 平均胜率 <80%: ⚠️ 市场可能处于强趋势，建议减少交易
+
+**历史数据对比**:
+- 2年回测: 88.07%胜率 (376笔交易) ✅
+- 最新7天: 需每次验证 (市场动态变化)
+
+**更新**: `heartbeat-state.json` 中的 `quant_learning` 日期
 
 ## 提醒规则
 

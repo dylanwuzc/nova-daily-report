@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-03-07T22:48:48.723554",
+  "summary": {
+    "pairs_tested": 8,
+    "total_trades": 36,
+    "avg_win_rate": 73.61111111111111,
+    "qualified_pairs": 3
+  },
+  "details": [
+    {
+      "symbol": "BTC/USDT",
+      "trades": 4,
+      "win_rate": 75.0,
+      "returns": -1.7172495840322426
+    },
+    {
+      "symbol": "ETH/USDT",
+      "trades": 4,
+      "win_rate": 75.0,
+      "returns": -0.5388927043712443
+    },
+    {
+      "symbol": "SOL/USDT",
+      "trades": 6,
+      "win_rate": 83.33333333333334,
+      "returns": 4.371466553932839
+    },
+    {
+      "symbol": "XAU/USDT",
+      "trades": 2,
+      "win_rate": 50.0,
+      "returns": -3.5653020806118887
+    },
+    {
+      "symbol": "RIVER/USDT",
+      "trades": 6,
+      "win_rate": 100.0,
+      "returns": 39.75439514661515
+    },
+    {
+      "symbol": "XAG/USDT",
+      "trades": 2,
+      "win_rate": 50.0,
+      "returns": -11.727153633259707
+    },
+    {
+      "symbol": "XRP/USDT",
+      "trades": 3,
+      "win_rate": 66.66666666666666,
+      "returns": -0.8111936193684869
+    },
+    {
+      "symbol": "SIGN/USDT",
+      "trades": 9,
+      "win_rate": 88.88888888888889,
+      "returns": 42.73682447638203
+    }
+  ]
+}
